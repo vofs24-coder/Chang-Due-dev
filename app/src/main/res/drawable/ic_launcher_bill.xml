@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
-    android:height="108dp"
+    android:height="54dp"
     android:viewportWidth="108"
-    android:viewportHeight="108">
+    android:viewportHeight="54">
 
     <group
         android:pivotX="54"
-        android:pivotY="54"
-        android:rotation="15">
+        android:pivotY="24"
+        android:rotation="15"
+        android:translateY="-30">
 
         <!-- Nota: borda dourada -->
         <path
@@ -30,7 +31,7 @@
             android:fillColor="#1B4D2E"
             android:pathData="M54,54 m-6,0 a6,5 0 1,0 12,0 a6,5 0 1,0 -12,0 Z" />
 
-        <!-- Moeda: contorno escuro (dá profundidade) -->
+        <!-- Moeda: contorno escuro -->
         <path
             android:fillColor="#8A6428"
             android:pathData="M76,42 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0 Z" />
@@ -40,7 +41,7 @@
             android:fillColor="#D4A854"
             android:pathData="M76,42 m-9.5,0 a9.5,9.5 0 1,0 19,0 a9.5,9.5 0 1,0 -19,0 Z" />
 
-        <!-- Moeda: buraco central (fundo escuro) -->
+        <!-- Moeda: buraco central -->
         <path
             android:fillColor="#0F1419"
             android:pathData="M76,42 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0 Z" />
