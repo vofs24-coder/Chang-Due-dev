@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">TOTAL</string>
+    <string name="received">REÇU</string>
+    <string name="change_due">MONNAIE</string>
+    <string name="still_due">RESTE À PAYER</string>
+    <string name="empty">—</string>
+    <string name="menu_about">À propos</string>
+    <string name="menu_share">Partager l\'app</string>
+    <string name="menu_rate">Noter sur Play Store</string>
+    <string name="about_title">À propos de Change Due</string>
+    <string name="about_version">Version</string>
+    <string name="about_description">Une calculatrice de monnaie rapide et hors ligne pour tous les jours.</string>
+    <string name="about_feature_offline">• Fonctionne 100% hors ligne</string>
+    <string name="about_feature_locale">• Détecte automatiquement votre région et devise</string>
+    <string name="about_feature_simple">• Sans compte, sans pub, sans complications</string>
+    <string name="about_close">Fermer</string>
+    <string name="content_desc_menu">Menu</string>
+    <string name="content_desc_backspace">Effacer</string>
+    <string name="content_desc_clear">Vider</string>
+    <string name="content_desc_next">Champ suivant</string>
+</resources>
