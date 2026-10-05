@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">합계</string>
+    <string name="received">받은 금액</string>
+    <string name="change_due">거스름돈</string>
+    <string name="still_due">부족</string>
+    <string name="empty">—</string>
+    <string name="menu_about">정보</string>
+    <string name="menu_share">앱 공유</string>
+    <string name="menu_rate">Play Store에서 평가</string>
+    <string name="about_title">Change Due 정보</string>
+    <string name="about_version">버전</string>
+    <string name="about_description">일상에서 쓰기 좋은 빠르고 오프라인 거스름돈 계산기입니다.</string>
+    <string name="about_feature_offline">• 100% 오프라인으로 작동</string>
+    <string name="about_feature_locale">• 지역과 통화를 자동으로 감지</string>
+    <string name="about_feature_simple">• 로그인 없음, 광고 없음, 복잡함 없음</string>
+    <string name="about_close">닫기</string>
+    <string name="content_desc_menu">메뉴</string>
+    <string name="content_desc_backspace">지우기</string>
+    <string name="content_desc_clear">초기화</string>
+    <string name="content_desc_next">다음 필드</string>
+</resources>
