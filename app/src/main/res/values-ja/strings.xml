@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">合計</string>
+    <string name="received">受取額</string>
+    <string name="change_due">お釣り</string>
+    <string name="still_due">不足</string>
+    <string name="empty">—</string>
+    <string name="menu_about">このアプリについて</string>
+    <string name="menu_share">アプリを共有</string>
+    <string name="menu_rate">Play Store で評価</string>
+    <string name="about_title">Change Due について</string>
+    <string name="about_version">バージョン</string>
+    <string name="about_description">毎日の使用に便利な、高速でオフラインのお釣り計算機です。</string>
+    <string name="about_feature_offline">• 100% オフラインで動作</string>
+    <string name="about_feature_locale">• お住まいの地域と通貨を自動検出</string>
+    <string name="about_feature_simple">• ログイン不要、広告なし、シンプル</string>
+    <string name="about_close">閉じる</string>
+    <string name="content_desc_menu">メニュー</string>
+    <string name="content_desc_backspace">削除</string>
+    <string name="content_desc_clear">クリア</string>
+    <string name="content_desc_next">次のフィールド</string>
+</resources>
