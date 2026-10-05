@@ -447,27 +447,6 @@ fun KeyIconButton(
         Icon(icon, contentDescription = null, tint = tint, modifier = Modifier.size(28.dp))
     }
 }
-
-@Composable
-fun KeyIconButton(
-    icon: ImageVector,
-    tint: Color,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit
-) {
-    Box(
-        modifier = modifier
-            .padding(3.dp)
-            .fillMaxSize()
-            .clip(RoundedCornerShape(10.dp))
-            .background(Color(0xFF181C22))
-            .clickable { onClick() },
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(icon, contentDescription = null, tint = tint, modifier = Modifier.size(28.dp))
-    }
-}
-
 private fun getDecimalSeparator(): String =
     DecimalFormatSymbols(Locale.getDefault()).decimalSeparator.toString()
 
