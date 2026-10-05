@@ -1,7 +1,5 @@
 package com.changedue.app
 
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -44,6 +42,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
@@ -149,7 +149,6 @@ fun ChangeDueScreen() {
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
-        // Header com ícone + título + menu
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -423,6 +422,31 @@ fun Keypad(
 }
 
 @Composable
+fun KeyButton(
+    text: String,
+    modifier: Modifier = Modifier,
+    textColor: Color = Color(0xFFFFFFFF),
+    onClick: () -> Unit
+) {
+    Box(
+        modifier = modifier
+            .padding(3.dp)
+            .fillMaxSize()
+            .shadow(2.dp, RoundedCornerShape(10.dp))
+            .clip(RoundedCornerShape(10.dp))
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(Color(0xFF3A3E46), Color(0xFF262A31))
+                )
+            )
+            .clickable { onClick() },
+        contentAlignment = Alignment.Center
+    ) {
+        Text(text = text, color = textColor, fontSize = 22.sp, fontWeight = FontWeight.Bold)
+    }
+}
+
+@Composable
 fun KeyIconButton(
     icon: ImageVector,
     tint: Color,
@@ -447,6 +471,7 @@ fun KeyIconButton(
         Icon(icon, contentDescription = null, tint = tint, modifier = Modifier.size(28.dp))
     }
 }
+
 private fun getDecimalSeparator(): String =
     DecimalFormatSymbols(Locale.getDefault()).decimalSeparator.toString()
 
