@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+
+    <string name="total">TOTAL</string>
+    <string name="received">RECEIVED</string>
+    <string name="change_due">CHANGE DUE</string>
+    <string name="still_due">STILL DUE</string>
+    <string name="empty">—</string>
+
+    <string name="menu_about">About</string>
+    <string name="menu_share">Share app</string>
+    <string name="menu_rate">Rate on Play Store</string>
+
+    <string name="about_title">About Change Due</string>
+    <string name="about_version">Version</string>
+    <string name="about_description">A fast, offline change calculator for everyday use.</string>
+    <string name="about_feature_offline">• Works 100% offline</string>
+    <string name="about_feature_locale">• Auto-detects your region and currency</string>
+    <string name="about_feature_simple">• No login, no ads, no clutter</string>
+    <string name="about_close">Close</string>
+
+    <string name="content_desc_menu">Menu</string>
+    <string name="content_desc_backspace">Backspace</string>
+    <string name="content_desc_clear">Clear</string>
+    <string name="content_desc_next">Next field</string>
+</resources>
