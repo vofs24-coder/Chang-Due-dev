@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -49,7 +50,10 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.changedue.app.ui.theme.ChangeDueTheme
@@ -156,7 +160,7 @@ fun ChangeDueScreen() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(R.drawable.ic_launcher_bill),
+                painter = painterResource(R.drawable.ic_header),
                 contentDescription = stringResource(R.string.app_name),
                 modifier = Modifier.size(32.dp)
             )
@@ -262,6 +266,7 @@ fun ChangeDueScreen() {
             isActive = false,
             onClick = {},
             autoFit = true,
+            isClickable = false,
             modifier = Modifier.padding(bottom = 14.dp)
         )
 
@@ -325,23 +330,24 @@ fun ScreenField(
     isActive: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    autoFit: Boolean = false
+    autoFit: Boolean = false,
+    isClickable: Boolean = true
 ) {
     val borderColor = if (isActive) Color(0xFF7A8BA3) else Color(0xFF2A313B)
-    Box(
-        modifier = modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(14.dp))
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(Color(0xFF1E2A38), Color(0xFF161E28))
-                ),
-                shape = RoundedCornerShape(14.dp)
-            )
-            .border(2.dp, borderColor, RoundedCornerShape(14.dp))
-            .clickable { onClick() }
-            .padding(14.dp)
-    ) {
+    val baseModifier = modifier
+        .fillMaxWidth()
+        .clip(RoundedCornerShape(14.dp))
+        .background(
+            brush = Brush.verticalGradient(
+                colors = listOf(Color(0xFF1E2A38), Color(0xFF161E28))
+            ),
+            shape = RoundedCornerShape(14.dp)
+        )
+        .border(2.dp, borderColor, RoundedCornerShape(14.dp))
+
+    val finalModifier = if (isClickable) baseModifier.clickable { onClick() } else baseModifier
+
+    Box(modifier = finalModifier.padding(14.dp)) {
         Column {
             Text(
                 text = label,
@@ -367,22 +373,33 @@ fun ScreenField(
 
 @Composable
 fun AutoFitText(text: String, color: Color) {
-    var fontSize by remember { mutableStateOf(36f) }
-    LaunchedEffect(text) { fontSize = 36f }
-    Text(
-        text = text,
+    val measurer = rememberTextMeasurer()
+    val baseStyle = TextStyle(
         color = color,
-        fontSize = fontSize.sp,
-        fontWeight = FontWeight.Bold,
-        maxLines = 1,
-        softWrap = false,
-        modifier = Modifier.fillMaxWidth(),
-        onTextLayout = { layout ->
-            if (layout.didOverflowWidth && fontSize > 10f) {
-                fontSize -= 1f
-            }
-        }
+        fontWeight = FontWeight.Bold
     )
+    BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
+        val maxWidthPx = constraints.maxWidth
+        var currentSize = 36f
+        while (currentSize > 10f) {
+            val layoutResult = measurer.measure(
+                text = AnnotatedString(text),
+                style = baseStyle.copy(fontSize = currentSize.sp),
+                maxLines = 1,
+                softWrap = false
+            )
+            if (layoutResult.size.width <= maxWidthPx) break
+            currentSize -= 1f
+        }
+        Text(
+            text = text,
+            color = color,
+            fontSize = currentSize.sp,
+            fontWeight = FontWeight.Bold,
+            maxLines = 1,
+            softWrap = false
+        )
+    }
 }
 
 @Composable
