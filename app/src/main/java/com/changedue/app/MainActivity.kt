@@ -84,7 +84,6 @@ fun ChangeDueScreen() {
     var menuOpen by remember { mutableStateOf(false) }
     var aboutOpen by remember { mutableStateOf(false) }
 
-    // Cursor piscante
     LaunchedEffect(cursorKey) {
         cursorVisible = true
         while (true) {
@@ -145,7 +144,6 @@ fun ChangeDueScreen() {
             .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
-        // Header
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -196,7 +194,6 @@ fun ChangeDueScreen() {
             }
         }
 
-        // Painel com TOTAL e RECEIVED
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -226,7 +223,6 @@ fun ChangeDueScreen() {
 
         Spacer(modifier = Modifier.height(14.dp))
 
-        // Resultado
         val total = parseCents(totalInput)
         val received = parseCents(receivedInput)
         val labelText: String
@@ -258,7 +254,6 @@ fun ChangeDueScreen() {
             modifier = Modifier.padding(bottom = 14.dp)
         )
 
-        // Teclado
         Keypad(
             decimalSeparator = decimalSep,
             onDigit = ::appendDigit,
@@ -271,7 +266,6 @@ fun ChangeDueScreen() {
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // Espaço reservado para banner AdMob
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -451,8 +445,6 @@ fun KeyIconButton(
     }
 }
 
-// ---------- Helpers ----------
-
 private fun getDecimalSeparator(): String =
     DecimalFormatSymbols(Locale.getDefault()).decimalSeparator.toString()
 
@@ -530,7 +522,7 @@ private fun formatCurrency(cents: Long): String {
 private fun everydaySymbol(country: String): String? = when (country) {
     "US" -> "$"; "CA" -> "C$"; "MX" -> "$"; "BR" -> "R$"
     "AR" -> "$"; "CL" -> "$"; "CO" -> "$"; "PE" -> "S/"
-    "UY" -> "$U"; "PY" -> "₲"; "BO" -> "Bs"; "VE" -> "Bs"
+    "UY" -> "\$U"; "PY" -> "₲"; "BO" -> "Bs"; "VE" -> "Bs"
     "EC" -> "$"; "DO" -> "RD$"; "JM" -> "J$"; "TT" -> "TT$"
 
     "GB" -> "£"; "IE" -> "€"; "FR" -> "€"; "DE" -> "€"
@@ -545,8 +537,8 @@ private fun everydaySymbol(country: String): String? = when (country) {
     "EG" -> "E£"; "MA" -> "DH"; "DZ" -> "DA"; "TN" -> "DT"
     "ET" -> "Br"; "CV" -> "CVE"; "ST" -> "Db"; "GW" -> "CFA"
     "SN" -> "CFA"; "CI" -> "CFA"; "CM" -> "FCFA"; "MU" -> "₨"
-    "ZW" -> "Z$"; "ZM" -> "ZK"; "MW" -> "MK"; "BW" -> "P"
-    "NA" -> "N$"
+    "ZW" -> "Z\$"; "ZM" -> "ZK"; "MW" -> "MK"; "BW" -> "P"
+    "NA" -> "N\$"
 
     "JP" -> "¥"; "CN" -> "¥"; "KR" -> "₩"; "TW" -> "NT$"
     "HK" -> "HK$"; "SG" -> "S$"; "IN" -> "₹"; "PK" -> "₨"
@@ -559,6 +551,6 @@ private fun everydaySymbol(country: String): String? = when (country) {
     "SY" -> "ل.س"; "IQ" -> "ع.د"; "IR" -> "﷼"; "IL" -> "₪"
     "YE" -> "﷼"
 
-    "AU" -> "A$"; "NZ" -> "NZ$"; "FJ" -> "FJ$"
+    "AU" -> "A\$"; "NZ" -> "NZ\$"; "FJ" -> "FJ\$"
     else -> null
 }
