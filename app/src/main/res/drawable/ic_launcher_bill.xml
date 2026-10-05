@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="15">
+
+        <!-- Nota: borda dourada -->
+        <path
+            android:fillColor="#D4A854"
+            android:pathData="M30,38 L78,38 Q82,38 82,42 L82,66 Q82,70 78,70 L30,70 Q26,70 26,66 L26,42 Q26,38 30,38 Z" />
+
+        <!-- Nota: interior verde escuro -->
+        <path
+            android:fillColor="#1B4D2E"
+            android:pathData="M33,41 L75,41 Q78,41 78,44 L78,64 Q78,67 75,67 L33,67 Q30,67 30,64 L30,44 Q30,41 33,41 Z" />
+
+        <!-- Anel central dourado -->
+        <path
+            android:fillColor="#D4A854"
+            android:pathData="M54,54 m-9,0 a9,7 0 1,0 18,0 a9,7 0 1,0 -18,0 Z" />
+
+        <!-- Interior do anel -->
+        <path
+            android:fillColor="#1B4D2E"
+            android:pathData="M54,54 m-6,0 a6,5 0 1,0 12,0 a6,5 0 1,0 -12,0 Z" />
+
+        <!-- Moeda: contorno escuro (dá profundidade) -->
+        <path
+            android:fillColor="#8A6428"
+            android:pathData="M76,42 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0 Z" />
+
+        <!-- Moeda: corpo dourado -->
+        <path
+            android:fillColor="#D4A854"
+            android:pathData="M76,42 m-9.5,0 a9.5,9.5 0 1,0 19,0 a9.5,9.5 0 1,0 -19,0 Z" />
+
+        <!-- Moeda: buraco central (fundo escuro) -->
+        <path
+            android:fillColor="#0F1419"
+            android:pathData="M76,42 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0 Z" />
+
+    </group>
+
+</vector>
