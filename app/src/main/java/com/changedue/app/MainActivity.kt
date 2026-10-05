@@ -13,12 +13,14 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
@@ -147,149 +149,156 @@ fun ChangeDueScreen() {
 
     val decimalSep = getDecimalSeparator()
 
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .padding(16.dp)
+            .background(MaterialTheme.colorScheme.background),
+        contentAlignment = Alignment.Center
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painterResource(R.drawable.ic_header),
-                contentDescription = stringResource(R.string.app_name),
-                modifier = Modifier.size(32.dp)
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-            Text(
-                text = stringResource(R.string.app_name),
-                color = MaterialTheme.colorScheme.onBackground,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.weight(1f)
-            )
-            Box {
-                IconButton(onClick = { menuOpen = true }) {
-                    Icon(
-                        Icons.Default.MoreVert,
-                        contentDescription = stringResource(R.string.content_desc_menu),
-                        tint = MaterialTheme.colorScheme.onBackground
-                    )
-                }
-                DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.menu_about)) },
-                        onClick = { menuOpen = false; aboutOpen = true }
-                    )
-                    DropdownMenuItem(
-                        text = { Text(stringResource(R.string.menu_share)) },
-                        onClick = {
-                            menuOpen = false
-                            val shareIntent = Intent(Intent.ACTION_SEND).apply {
-                                type = "text/plain"
-                                putExtra(
-                                    Intent.EXTRA_TEXT,
-                                    "Change Due — ${context.getString(R.string.app_name)}\n" +
-                                    "https://play.google.com/store/apps/details?id=${context.packageName}"
-                                )
-                            }
-                            context.startActivity(
-                                Intent.createChooser(
-                                    shareIntent,
-                                    context.getString(R.string.menu_share)
-                                )
-                            )
-                        }
-                    )
-                }
-            }
-        }
-
         Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(18.dp))
-                .background(Color(0xFF131C26))
-                .border(1.dp, Color(0xFF1F2A38), RoundedCornerShape(18.dp))
-                .padding(10.dp)
+                .widthIn(max = 500.dp)
+                .fillMaxHeight()
+                .padding(16.dp)
         ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.ic_header),
+                    contentDescription = stringResource(R.string.app_name),
+                    modifier = Modifier.height(28.dp)
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                Text(
+                    text = stringResource(R.string.app_name),
+                    color = MaterialTheme.colorScheme.onBackground,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.weight(1f)
+                )
+                Box {
+                    IconButton(onClick = { menuOpen = true }) {
+                        Icon(
+                            Icons.Default.MoreVert,
+                            contentDescription = stringResource(R.string.content_desc_menu),
+                            tint = MaterialTheme.colorScheme.onBackground
+                        )
+                    }
+                    DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.menu_about)) },
+                            onClick = { menuOpen = false; aboutOpen = true }
+                        )
+                        DropdownMenuItem(
+                            text = { Text(stringResource(R.string.menu_share)) },
+                            onClick = {
+                                menuOpen = false
+                                val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                                    type = "text/plain"
+                                    putExtra(
+                                        Intent.EXTRA_TEXT,
+                                        "Change Due — ${context.getString(R.string.app_name)}\n" +
+                                        "https://play.google.com/store/apps/details?id=${context.packageName}"
+                                    )
+                                }
+                                context.startActivity(
+                                    Intent.createChooser(
+                                        shareIntent,
+                                        context.getString(R.string.menu_share)
+                                    )
+                                )
+                            }
+                        )
+                    }
+                }
+            }
+
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(18.dp))
+                    .background(Color(0xFF131C26))
+                    .border(1.dp, Color(0xFF1F2A38), RoundedCornerShape(18.dp))
+                    .padding(10.dp)
+            ) {
+                ScreenField(
+                    label = stringResource(R.string.total),
+                    labelColor = MaterialTheme.colorScheme.primary,
+                    valueColor = MaterialTheme.colorScheme.primary,
+                    text = buildFieldText(totalInput, Field.TOTAL, activeField, cursorVisible, decimalSep),
+                    isActive = activeField == Field.TOTAL,
+                    onClick = { switchField(Field.TOTAL) },
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+                ScreenField(
+                    label = stringResource(R.string.received),
+                    labelColor = MaterialTheme.colorScheme.tertiary,
+                    valueColor = MaterialTheme.colorScheme.tertiary,
+                    text = buildFieldText(receivedInput, Field.RECEIVED, activeField, cursorVisible, decimalSep),
+                    isActive = activeField == Field.RECEIVED,
+                    onClick = { switchField(Field.RECEIVED) }
+                )
+            }
+
+            Spacer(modifier = Modifier.height(14.dp))
+
+            val total = parseCents(totalInput)
+            val received = parseCents(receivedInput)
+            val labelText: String
+            val valueText: String
+            val valueColor: Color
+
+            if (total < 0 || received < 0) {
+                labelText = stringResource(R.string.change_due)
+                valueText = stringResource(R.string.empty)
+                valueColor = MaterialTheme.colorScheme.secondary
+            } else if (received >= total) {
+                labelText = stringResource(R.string.change_due)
+                valueText = formatCurrency(received - total)
+                valueColor = MaterialTheme.colorScheme.secondary
+            } else {
+                labelText = stringResource(R.string.still_due)
+                valueText = formatCurrency(total - received)
+                valueColor = MaterialTheme.colorScheme.error
+            }
+
             ScreenField(
-                label = stringResource(R.string.total),
-                labelColor = MaterialTheme.colorScheme.primary,
-                valueColor = MaterialTheme.colorScheme.primary,
-                text = buildFieldText(totalInput, Field.TOTAL, activeField, cursorVisible, decimalSep),
-                isActive = activeField == Field.TOTAL,
-                onClick = { switchField(Field.TOTAL) },
-                modifier = Modifier.padding(bottom = 8.dp)
+                label = labelText,
+                labelColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                valueColor = valueColor,
+                text = valueText,
+                isActive = false,
+                onClick = {},
+                autoFit = true,
+                isClickable = false,
+                modifier = Modifier.padding(bottom = 14.dp)
             )
-            ScreenField(
-                label = stringResource(R.string.received),
-                labelColor = MaterialTheme.colorScheme.tertiary,
-                valueColor = MaterialTheme.colorScheme.tertiary,
-                text = buildFieldText(receivedInput, Field.RECEIVED, activeField, cursorVisible, decimalSep),
-                isActive = activeField == Field.RECEIVED,
-                onClick = { switchField(Field.RECEIVED) }
+
+            Keypad(
+                decimalSeparator = decimalSep,
+                onDigit = ::appendDigit,
+                onDecimal = ::appendDecimal,
+                onBackspace = ::backspace,
+                onClear = ::clearActive,
+                onNext = ::nextField,
+                modifier = Modifier.weight(1f)
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(52.dp)
+                    .clip(RoundedCornerShape(8.dp))
+                    .background(Color(0xFF0A0E13))
+                    .border(1.dp, Color(0xFF232B3D), RoundedCornerShape(8.dp))
             )
         }
-
-        Spacer(modifier = Modifier.height(14.dp))
-
-        val total = parseCents(totalInput)
-        val received = parseCents(receivedInput)
-        val labelText: String
-        val valueText: String
-        val valueColor: Color
-
-        if (total < 0 || received < 0) {
-            labelText = stringResource(R.string.change_due)
-            valueText = stringResource(R.string.empty)
-            valueColor = MaterialTheme.colorScheme.secondary
-        } else if (received >= total) {
-            labelText = stringResource(R.string.change_due)
-            valueText = formatCurrency(received - total)
-            valueColor = MaterialTheme.colorScheme.secondary
-        } else {
-            labelText = stringResource(R.string.still_due)
-            valueText = formatCurrency(total - received)
-            valueColor = MaterialTheme.colorScheme.error
-        }
-
-        ScreenField(
-            label = labelText,
-            labelColor = MaterialTheme.colorScheme.onSurfaceVariant,
-            valueColor = valueColor,
-            text = valueText,
-            isActive = false,
-            onClick = {},
-            autoFit = true,
-            isClickable = false,
-            modifier = Modifier.padding(bottom = 14.dp)
-        )
-
-        Keypad(
-            decimalSeparator = decimalSep,
-            onDigit = ::appendDigit,
-            onDecimal = ::appendDecimal,
-            onBackspace = ::backspace,
-            onClear = ::clearActive,
-            onNext = ::nextField,
-            modifier = Modifier.weight(1f)
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(52.dp)
-                .clip(RoundedCornerShape(8.dp))
-                .background(Color(0xFF0A0E13))
-                .border(1.dp, Color(0xFF232B3D), RoundedCornerShape(8.dp))
-        )
     }
 
     if (aboutOpen) {
