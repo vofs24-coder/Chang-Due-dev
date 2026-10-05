@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
-    android:height="54dp"
+    android:height="108dp"
     android:viewportWidth="108"
-    android:viewportHeight="54">
+    android:viewportHeight="108">
 
+    <!-- Fundo escuro (para launcher, ignorado no splash) -->
+    <path
+        android:fillColor="#0F1419"
+        android:pathData="M0,0 L108,0 L108,108 L0,108 Z" />
+
+    <!-- Conteúdo encolhido para caber na safe zone -->
     <group
         android:pivotX="54"
-        android:pivotY="24"
-        android:rotation="15"
-        android:translateY="-30">
+        android:pivotY="54"
+        android:scaleX="0.66"
+        android:scaleY="0.66">
 
-        <!-- Nota: borda dourada -->
+        <!-- Nota exterior dourada -->
         <path
             android:fillColor="#D4A854"
-            android:pathData="M30,38 L78,38 Q82,38 82,42 L82,66 Q82,70 78,70 L30,70 Q26,70 26,66 L26,42 Q26,38 30,38 Z" />
+            android:pathData="M18,34 L90,34 Q94,34 94,38 L94,70 Q94,74 90,74 L18,74 Q14,74 14,70 L14,38 Q14,34 18,34 Z" />
 
-        <!-- Nota: interior verde escuro -->
+        <!-- Nota interior verde -->
         <path
-            android:fillColor="#1B4D2E"
-            android:pathData="M33,41 L75,41 Q78,41 78,44 L78,64 Q78,67 75,67 L33,67 Q30,67 30,64 L30,44 Q30,41 33,41 Z" />
+            android:fillColor="#2E8B57"
+            android:pathData="M20,38 L88,38 Q90,38 90,40 L90,68 Q90,70 88,70 L20,70 Q18,70 18,68 L18,40 Q18,38 20,38 Z" />
 
-        <!-- Anel central dourado -->
-        <path
-            android:fillColor="#D4A854"
-            android:pathData="M54,54 m-9,0 a9,7 0 1,0 18,0 a9,7 0 1,0 -18,0 Z" />
-
-        <!-- Interior do anel -->
-        <path
-            android:fillColor="#1B4D2E"
-            android:pathData="M54,54 m-6,0 a6,5 0 1,0 12,0 a6,5 0 1,0 -12,0 Z" />
-
-        <!-- Moeda: contorno escuro -->
-        <path
-            android:fillColor="#8A6428"
-            android:pathData="M76,42 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0 Z" />
-
-        <!-- Moeda: corpo dourado -->
-        <path
-            android:fillColor="#D4A854"
-            android:pathData="M76,42 m-9.5,0 a9.5,9.5 0 1,0 19,0 a9.5,9.5 0 1,0 -19,0 Z" />
-
-        <!-- Moeda: buraco central -->
+        <!-- Interior escuro do medalhão -->
         <path
             android:fillColor="#0F1419"
-            android:pathData="M76,42 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0 Z" />
+            android:pathData="M54,54 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0 Z" />
+
+        <!-- Medalhão dourado -->
+        <path
+            android:fillColor="#D4A854"
+            android:pathData="M54,54 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0 Z" />
+
+        <!-- Traço dourado superior esquerdo -->
+        <path
+            android:fillColor="#D4A854"
+            android:pathData="M26,44 L36,44 L36,46 L26,46 Z" />
+
+        <!-- Traço dourado inferior direito -->
+        <path
+            android:fillColor="#D4A854"
+            android:pathData="M72,62 L82,62 L82,64 L72,64 Z" />
 
     </group>
 
