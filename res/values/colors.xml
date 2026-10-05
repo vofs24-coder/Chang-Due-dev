@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#0F1419</color>
+    <color name="icon_background">#0F1419</color>
+    <color name="card">#1A1F2E</color>
+    <color name="card_border">#232B3D</color>
+    <color name="accent">#4A9EFF</color>
+    <color name="received_accent">#FFB84D</color>
+    <color name="text">#FFFFFF</color>
+    <color name="muted">#8B95A5</color>
+    <color name="divider">#232B3D</color>
+    <color name="green">#2ECC71</color>
+    <color name="red">#E74C3C</color>
+    <color name="key_bg">#1E2530</color>
+    <color name="key_pressed">#2A3441</color>
+</resources>
