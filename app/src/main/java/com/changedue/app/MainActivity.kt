@@ -1,5 +1,7 @@
 package com.changedue.app
 
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Brush
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -331,7 +333,12 @@ fun ScreenField(
         modifier = modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .background(Color(0xFF1A2430))
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(Color(0xFF1E2A38), Color(0xFF161E28))
+                ),
+                shape = RoundedCornerShape(14.dp)
+            )
             .border(2.dp, borderColor, RoundedCornerShape(14.dp))
             .clickable { onClick() }
             .padding(14.dp)
@@ -416,22 +423,28 @@ fun Keypad(
 }
 
 @Composable
-fun KeyButton(
-    text: String,
+fun KeyIconButton(
+    icon: ImageVector,
+    tint: Color,
     modifier: Modifier = Modifier,
-    textColor: Color = Color(0xFFFFFFFF),
     onClick: () -> Unit
 ) {
     Box(
         modifier = modifier
             .padding(3.dp)
             .fillMaxSize()
+            .shadow(2.dp, RoundedCornerShape(10.dp))
             .clip(RoundedCornerShape(10.dp))
-            .background(Color(0xFF2E323A))
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(Color(0xFF2A2E36), Color(0xFF181C22))
+                )
+            )
+            .border(1.dp, Color(0xFF3A4556), RoundedCornerShape(10.dp))
             .clickable { onClick() },
         contentAlignment = Alignment.Center
     ) {
-        Text(text = text, color = textColor, fontSize = 22.sp, fontWeight = FontWeight.Bold)
+        Icon(icon, contentDescription = null, tint = tint, modifier = Modifier.size(28.dp))
     }
 }
 
