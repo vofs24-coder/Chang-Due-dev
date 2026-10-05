@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">总计</string>
+    <string name="received">收款</string>
+    <string name="change_due">找零</string>
+    <string name="still_due">还差</string>
+    <string name="empty">—</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_share">分享应用</string>
+    <string name="menu_rate">在 Play Store 评分</string>
+    <string name="about_title">关于 Change Due</string>
+    <string name="about_version">版本</string>
+    <string name="about_description">快速、离线的日常找零计算器。</string>
+    <string name="about_feature_offline">• 100% 离线运行</string>
+    <string name="about_feature_locale">• 自动检测您的地区和货币</string>
+    <string name="about_feature_simple">• 无需登录、无广告、无杂乱</string>
+    <string name="about_close">关闭</string>
+    <string name="content_desc_menu">菜单</string>
+    <string name="content_desc_backspace">删除</string>
+    <string name="content_desc_clear">清空</string>
+    <string name="content_desc_next">下一个字段</string>
+</resources>
