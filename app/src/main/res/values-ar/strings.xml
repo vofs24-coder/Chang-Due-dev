@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">الإجمالي</string>
+    <string name="received">المستلم</string>
+    <string name="change_due">الباقي</string>
+    <string name="still_due">ناقص</string>
+    <string name="empty">—</string>
+    <string name="menu_about">حول</string>
+    <string name="menu_share">شارك التطبيق</string>
+    <string name="menu_rate">قيّم على Play Store</string>
+    <string name="about_title">حول Change Due</string>
+    <string name="about_version">الإصدار</string>
+    <string name="about_description">آلة حاسبة سريعة للباقي تعمل دون اتصال للاستخدام اليومي.</string>
+    <string name="about_feature_offline">• يعمل 100% دون اتصال</string>
+    <string name="about_feature_locale">• يكتشف منطقتك وعملتك تلقائيًا</string>
+    <string name="about_feature_simple">• بدون تسجيل، بدون إعلانات، بدون تعقيد</string>
+    <string name="about_close">إغلاق</string>
+    <string name="content_desc_menu">القائمة</string>
+    <string name="content_desc_backspace">حذف</string>
+    <string name="content_desc_clear">مسح</string>
+    <string name="content_desc_next">الحقل التالي</string>
+</resources>
