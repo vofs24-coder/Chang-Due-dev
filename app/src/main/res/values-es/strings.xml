@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">TOTAL</string>
+    <string name="received">RECIBIDO</string>
+    <string name="change_due">CAMBIO</string>
+    <string name="still_due">FALTA PAGAR</string>
+    <string name="empty">—</string>
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_share">Compartir app</string>
+    <string name="menu_rate">Valorar en Play Store</string>
+    <string name="about_title">Acerca de Change Due</string>
+    <string name="about_version">Versión</string>
+    <string name="about_description">Una calculadora de cambio rápida y sin conexión para el día a día.</string>
+    <string name="about_feature_offline">• Funciona 100% sin conexión</string>
+    <string name="about_feature_locale">• Detecta tu región y moneda automáticamente</string>
+    <string name="about_feature_simple">• Sin login, sin anuncios, sin complicaciones</string>
+    <string name="about_close">Cerrar</string>
+    <string name="content_desc_menu">Menú</string>
+    <string name="content_desc_backspace">Borrar</string>
+    <string name="content_desc_clear">Limpiar</string>
+    <string name="content_desc_next">Siguiente campo</string>
+</resources>
