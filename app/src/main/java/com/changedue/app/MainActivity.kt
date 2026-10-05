@@ -343,15 +343,21 @@ fun ScreenField(
     isClickable: Boolean = true
 ) {
     val borderColor = if (isActive) Color(0xFF7A8BA3) else Color(0xFF2A313B)
+    val backgroundBrush = if (autoFit) {
+        // Resultado: preto puro para destacar
+        Brush.verticalGradient(
+            colors = listOf(Color(0xFF000000), Color(0xFF000000))
+        )
+    } else {
+        // Campos TOTAL/RECEIVED: gradiente cinza-azulado
+        Brush.verticalGradient(
+            colors = listOf(Color(0xFF1E2A38), Color(0xFF161E28))
+        )
+    }
     val baseModifier = modifier
         .fillMaxWidth()
         .clip(RoundedCornerShape(14.dp))
-        .background(
-            brush = Brush.verticalGradient(
-                colors = listOf(Color(0xFF1E2A38), Color(0xFF161E28))
-            ),
-            shape = RoundedCornerShape(14.dp)
-        )
+        .background(brush = backgroundBrush, shape = RoundedCornerShape(14.dp))
         .border(2.dp, borderColor, RoundedCornerShape(14.dp))
 
     val finalModifier = if (isClickable) baseModifier.clickable { onClick() } else baseModifier
