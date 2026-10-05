@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">कुल</string>
+    <string name="received">प्राप्त</string>
+    <string name="change_due">बाकी</string>
+    <string name="still_due">कम है</string>
+    <string name="empty">—</string>
+    <string name="menu_about">के बारे में</string>
+    <string name="menu_share">ऐप साझा करें</string>
+    <string name="menu_rate">Play Store पर रेट करें</string>
+    <string name="about_title">Change Due के बारे में</string>
+    <string name="about_version">संस्करण</string>
+    <string name="about_description">रोज़मर्रा के उपयोग के लिए तेज़, ऑफ़लाइन बाकी कैलकुलेटर।</string>
+    <string name="about_feature_offline">• 100% ऑफ़लाइन काम करता है</string>
+    <string name="about_feature_locale">• आपके क्षेत्र और मुद्रा को स्वतः पहचानता है</string>
+    <string name="about_feature_simple">• बिना लॉगिन, बिना विज्ञापन, बिना झंझट</string>
+    <string name="about_close">बंद करें</string>
+    <string name="content_desc_menu">मेनू</string>
+    <string name="content_desc_backspace">मिटाएँ</string>
+    <string name="content_desc_clear">साफ़ करें</string>
+    <string name="content_desc_next">अगला फ़ील्ड</string>
+</resources>
