@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Change Due</string>
+    <string name="total">JUMLA</string>
+    <string name="received">IMEPOKELEWA</string>
+    <string name="change_due">CHENJI</string>
+    <string name="still_due">INABAKI</string>
+    <string name="empty">—</string>
+    <string name="menu_about">Kuhusu</string>
+    <string name="menu_share">Shiriki programu</string>
+    <string name="menu_rate">Kadiria kwenye Play Store</string>
+    <string name="about_title">Kuhusu Change Due</string>
+    <string name="about_version">Toleo</string>
+    <string name="about_description">Kikokotoo cha chenji cha haraka na bila mtandao kwa matumizi ya kila siku.</string>
+    <string name="about_feature_offline">• Inafanya kazi 100% bila mtandao</string>
+    <string name="about_feature_locale">• Inatambua eneo lako na sarafu kiotomatiki</string>
+    <string name="about_feature_simple">• Bila kuingia, bila matangazo, bila usumbufu</string>
+    <string name="about_close">Funga</string>
+    <string name="content_desc_menu">Menyu</string>
+    <string name="content_desc_backspace">Futa</string>
+    <string name="content_desc_clear">Safisha</string>
+    <string name="content_desc_next">Sehemu inayofuata</string>
+</resources>
